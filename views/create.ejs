@@ -1,28 +1,125 @@
 <%- include("./partials/header")%>
     <!--  -->
 
-    <form class="container w-50 mt-2 p-5 bg-light" action="/create" method="post" enctype="multipart/form-data">
-        <h1>Book Store Entry</h1>
-
-        <input class="form-control mb-3" type="file" name="image" />
-
-
-        <input class="form-control mb-3" type="text" placeholder="Book Name" name="name" />
-
-        <input class="form-control mb-3" type="text" placeholder="Author Name" name="author" />
-
-        <input class="form-control mb-3" type="text" placeholder="Book Price" name="price" />
-
-        <input class="form-control mb-3" type="text" placeholder="Book Quantity" name="quantity" />
-
-        <input class="form-control mb-3" type="text" placeholder="Book Category" name="category" />
-
-        <input class="form-control mb-3" type="text" placeholder="Book Language" name="language" />
-
-        <textarea class="form-control mb-3" name="description" id="" cols="30" rows="10"
-            placeholder="enter text here..."></textarea>
-
-        <button class="btn btn-primary">Add Book</button>
-    </form>
+    <form
+    class="container w-50 mt-4 p-5 bg-white rounded shadow-lg border"
+    action="/create"
+    method="post"
+    enctype="multipart/form-data"
+  >
+    <!-- Form Header -->
+    <h1 class="text-center text-primary mb-4 animate-heading">📚 Book Store Entry</h1>
+  
+    <!-- Image Upload -->
+    <div class="mb-4">
+      <label for="image" class="form-label fw-semibold">Book Image</label>
+      <input
+        class="form-control"
+        type="file"
+        name="image"
+        id="image"
+        required
+      />
+    </div>
+  
+    <!-- Book Name -->
+    <div class="mb-4">
+      <label for="name" class="form-label fw-semibold">Book Name</label>
+      <input
+        class="form-control"
+        type="text"
+        placeholder="Enter Book Name"
+        name="name"
+        id="name"
+        required
+      />
+    </div>
+  
+    <!-- Author Name -->
+    <div class="mb-4">
+      <label for="author" class="form-label fw-semibold">Author Name</label>
+      <input
+        class="form-control"
+        type="text"
+        placeholder="Enter Author Name"
+        name="author"
+        id="author"
+        required
+      />
+    </div>
+  
+    <!-- Book Price -->
+    <div class="mb-4">
+      <label for="price" class="form-label fw-semibold">Book Price</label>
+      <input
+        class="form-control"
+        type="text"
+        placeholder="Enter Book Price"
+        name="price"
+        id="price"
+        required
+      />
+    </div>
+  
+    <!-- Book Quantity -->
+    <div class="mb-4">
+      <label for="quantity" class="form-label fw-semibold">Book Quantity</label>
+      <input
+        class="form-control"
+        type="text"
+        placeholder="Enter Book Quantity"
+        name="quantity"
+        id="quantity"
+        required
+      />
+    </div>
+  
+    <!-- Book Category -->
+    <div class="mb-4">
+      <label for="category" class="form-label fw-semibold">Book Category</label>
+      <input
+        class="form-control"
+        type="text"
+        placeholder="Enter Book Category"
+        name="category"
+        id="category"
+        required
+      />
+    </div>
+  
+    <!-- Book Language -->
+    <div class="mb-4">
+      <label for="language" class="form-label fw-semibold">Book Language</label>
+      <input
+        class="form-control"
+        type="text"
+        placeholder="Enter Book Language"
+        name="language"
+        id="language"
+        required
+      />
+    </div>
+  
+    <!-- Description -->
+    <div class="mb-4">
+      <label for="description" class="form-label fw-semibold">Description</label>
+      <textarea
+        class="form-control"
+        name="description"
+        id="description"
+        cols="30"
+        rows="5"
+        placeholder="Enter book description here..."
+        required
+      ></textarea>
+    </div>
+  
+    <!-- Submit Button -->
+    <div class="d-grid">
+      <button class="btn btn-primary btn-lg shadow animate-button">
+        Add Book
+      </button>
+    </div>
+  </form>
     <!--  -->
     <%- include("./partials/footer")%>
