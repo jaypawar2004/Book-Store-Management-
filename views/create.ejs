@@ -121,5 +121,49 @@
       </button>
     </div>
   </form>
+ <style>
+/* Heading Animation */
+.animate-heading {
+  animation: fadeIn 1.5s ease-in-out;
+}
+
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+    transform: translateY(-20px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Button Hover Animation */
+.animate-button {
+  transition: transform 0.3s ease-in-out, background-color 0.3s;
+}
+
+.animate-button:hover {
+  transform: scale(1.05);
+  background-color: #0056b3 !important; /* Darker shade of blue */
+}
+
+/* Form Shadow */
+form {
+  animation: slideIn 1s ease-in-out;
+}
+
+@keyframes slideIn {
+  0% {
+    opacity: 0;
+    transform: translateY(50px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+</style>
+
     <!--  -->
     <%- include("./partials/footer")%>
