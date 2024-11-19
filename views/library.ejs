@@ -1,29 +1,95 @@
 <%- include("./partials/header")%>
-    <!--  -->
 
-    <h1 class="container mt-5">Book Store Library</h1>
-    <!--  -->
-    <div class="d-flex flex-wrap container bg-light p-5">
-        <% books.forEach(function(book, index){ %>
-            <div class="card me-3 mb-3" style="width: 18rem">
-                <img width="w-100" style="height: 200px; object-fit: cover; object-position: center;"
-                    src="/images/<%= book.image %>" alt="">
-                <div class="card-body">
-                    <h5 class="card-title">
-                        <%= book.name%>
-                    </h5>
-                    <h6 class="card-subtitle mb-2 text-body-secondary">
-                        <%= book.author%>
-                    </h6>
-                    <p class="card-text">
-                        <%= book.description%>
-                    </p>
-                    <a href="/delete/<%= book._id%>" class="card-link text-danger">Delete Book</a>
-                    <a href="/update/<%= book._id%>" class="card-link">Update Book</a>
-                </div>
+<!-- Animated Header -->
+<h1 class="container mt-5 animated-header">Book Store Library</h1>
+
+<!-- Book Cards with Animations -->
+<div class="d-flex flex-wrap container bg-light p-5 fade-in">
+    <% books.forEach(function(book, index){ %>
+        <div class="card me-3 mb-3 book-card" style="width: 18rem">
+            <img width="w-100" style="height: 200px; object-fit: cover; object-position: center;"
+                src="/images/<%= book.image %>" alt="Book Image">
+            <div class="card-body">
+                <h5 class="card-title">
+                    <%= book.name%>
+                </h5>
+                <h6 class="card-subtitle mb-2 text-body-secondary">
+                    <%= book.author%>
+                </h6>
+                <p class="card-text">
+                    <%= book.description%>
+                </p>
+                <a href="/delete/<%= book._id%>" class="card-link text-danger btn-hover">Delete Book</a>
+                <a href="/update/<%= book._id%>" class="card-link btn-hover">Update Book</a>
             </div>
-            <% }) %>
-    </div>
+        </div>
+    <% }) %>
+</div>
 
-    <!--  -->
-    <%- include("./partials/footer")%>
+<%- include("./partials/footer")%>
+
+<!-- Custom CSS for Animations -->
+<style>
+    /* Header Animation */
+    .animated-header {
+        animation: slideIn 1s ease-out;
+        text-align: center;
+    }
+
+    @keyframes slideIn {
+        0% {
+            transform: translateY(-50px);
+            opacity: 0;
+        }
+        100% {
+            transform: translateY(0);
+            opacity: 1;
+        }
+    }
+
+    /* Fade-in Effect for Cards */
+    .fade-in {
+        animation: fadeIn 1s ease-in-out;
+    }
+
+    @keyframes fadeIn {
+        from {
+            opacity: 0;
+        }
+        to {
+            opacity: 1;
+        }
+    }
+
+    /* Card Hover Effect */
+    .book-card {
+        transition: transform 0.3s, box-shadow 0.3s;
+    }
+
+    .book-card:hover {
+        transform: scale(1.05);
+        box-shadow: 0 8px 15px rgba(0, 0, 0, 0.2);
+    }
+
+    /* Button Hover Effect */
+    .btn-hover {
+        position: relative;
+        text-decoration: none;
+        transition: color 0.3s ease-in-out;
+    }
+
+    .btn-hover:hover {
+        color: #007bff; /* Bootstrap primary color */
+    }
+
+    .btn-hover.text-danger:hover {
+        color: #dc3545; /* Bootstrap danger color */
+    }
+
+    /* Responsive Design */
+    @media (max-width: 768px) {
+        .book-card {
+            width: 100%;
+        }
+    }
+</style>
